@@ -5,11 +5,12 @@ import axios from 'axios';
 
 const ContinueWithApple = ({ appleResponse }) => {
   const onResponseReceived = async (data) => {
+    console.log("data",data)
     try{
       const response = await axios.post("http://localhost:8000/apple-auth")
       console.log(response)
     }catch(e){
-      console.log(e)
+      console.log("error",e)
     }
   };
   return (
