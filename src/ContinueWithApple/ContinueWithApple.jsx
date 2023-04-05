@@ -11,7 +11,7 @@ const ContinueWithApple = ({ appleResponse }) => {
     if(!data.code) 
       return
     try{
-      const response = await axios.post("https://testing-nodejs-987j.onrender.com/auth",{
+      const response = await axios.post("http://localhost:8000/api/user/apple-auth",{
           code:data.code
       })
       console.log(response)
@@ -22,12 +22,12 @@ const ContinueWithApple = ({ appleResponse }) => {
   return (
     <AppleLogin
       clientId="com.tandemexperiences.login.app"
-      redirectURI="https://testing-nodejs-987j.onrender.com/auth"
+      redirectURI="https://sample-react-app-vercel-testing.vercel.app/"
       usePopup={false}
       callback={onResponseReceived} // Catch the response
       scope="email name"
-      responseMode="form_post"
-      responseType="code id_token"
+      responseMode="query"
+      responseType="code"
       render={(
         renderProps //Custom Apple Sign in Button
       ) => (
