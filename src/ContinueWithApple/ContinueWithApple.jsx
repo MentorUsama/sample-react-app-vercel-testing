@@ -6,7 +6,7 @@ import axios from 'axios';
 const ContinueWithApple = ({ appleResponse }) => {
   const onResponseReceived = async (data) => {
     console.log("data",data)
-    if(!data.token) 
+    if(!data.code) 
       return
     try{
       const response = await axios.post("http://localhost:8000/api/user/apple-auth",{
