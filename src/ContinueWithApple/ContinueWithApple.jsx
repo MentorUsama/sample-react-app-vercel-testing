@@ -22,7 +22,7 @@ const ContinueWithApple = ({ appleResponse }) => {
   return (
     <AppleLogin
       clientId="com.tandemexperiences.login.app"
-      redirectURI="https://sample-react-app-vercel-testing.vercel.app/auth"
+      redirectURI="https://testing-nodejs-987j.onrender.com/auth"
       usePopup={false}
       callback={onResponseReceived} // Catch the response
       scope="email name"
