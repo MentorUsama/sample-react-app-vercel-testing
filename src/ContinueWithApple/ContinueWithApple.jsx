@@ -4,6 +4,7 @@ import * as styles from './styles';
 import axios from 'axios';
 
 const ContinueWithApple = ({ appleResponse }) => {
+  console.log("version 1")
   const onResponseReceived = async (data) => {
     console.log("data v1",data)
     if(!data.code) 
