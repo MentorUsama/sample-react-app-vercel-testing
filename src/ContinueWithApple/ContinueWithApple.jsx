@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const ContinueWithApple = ({ appleResponse }) => {
   const onResponseReceived = async (data) => {
-    console.log("data",data)
+    console.log("data v1",data)
     if(!data.code) 
       return
     try{
