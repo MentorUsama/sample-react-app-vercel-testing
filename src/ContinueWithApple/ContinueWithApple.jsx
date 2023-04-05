@@ -3,6 +3,7 @@ import AppleLogin from 'react-apple-login';
 import * as styles from './styles';
 import axios from 'axios';
 
+// https://appleid.apple.com/auth/authorize?response_type=code%20id_token&client_id=com.tandemexperiences.login.app&redirect_uri=https://sample-react-app-vercel-testing.vercel.app/&state=aa5b531d39&scope=name%20email&response_mode=form_post
 const ContinueWithApple = ({ appleResponse }) => {
   console.log("version 1")
   const onResponseReceived = async (data) => {
@@ -21,11 +22,12 @@ const ContinueWithApple = ({ appleResponse }) => {
   return (
     <AppleLogin
       clientId="com.tandemexperiences.login.app"
-      redirectURI="https://sample-react-app-vercel-testing.vercel.app/"
+      redirectURI="https://sample-react-app-vercel-testing.vercel.app/auth"
       usePopup={false}
       callback={onResponseReceived} // Catch the response
       scope="email name"
-      responseMode="query"
+      responseMode="form_post"
+      responseType="code id_token"
       render={(
         renderProps //Custom Apple Sign in Button
       ) => (
