@@ -7,7 +7,7 @@ const ContinueWithApple = ({ appleResponse }) => {
   const onResponseReceived = async (data) => {
     console.log("data",data)
     try{
-      const response = await axios.post("http://localhost:8000/apple-auth")
+      const response = await axios.post("http://localhost:8000/user/apple-auth")
       console.log(response)
     }catch(e){
       console.log("error",e)
